@@ -1,14 +1,18 @@
 [
     {
-        "merged": "com.example.examendesarrollo.app-mergeReleaseResources-49:/layout/fragment_error.xml",
-        "source": "com.example.examendesarrollo.app-main-51:/layout/fragment_error.xml"
+        "merged": "C:\\Users\\dmrzl\\.gradle\\daemon\\8.0\\com.example.examendesarrollo.app-mergeReleaseResources-49:\\layout\\fragment_error.xml",
+        "source": "C:\\Users\\dmrzl\\.gradle\\daemon\\8.0\\com.example.examendesarrollo.app-main-51:\\layout\\fragment_error.xml"
+    },
+    {
+        "merged": "C:\\Users\\dmrzl\\.gradle\\daemon\\8.0\\com.example.examendesarrollo.app-mergeReleaseResources-49:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\dmrzl\\.gradle\\daemon\\8.0\\com.example.examendesarrollo.app-main-51:\\layout\\activity_main.xml"
     },
     {
         "merged": "com.example.examendesarrollo.app-mergeReleaseResources-49:/layout/activity_main.xml",
         "source": "com.example.examendesarrollo.app-main-51:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.examendesarrollo.app-mergeReleaseResources-49:/layout/item_movie.xml",
-        "source": "com.example.examendesarrollo.app-main-51:/layout/item_movie.xml"
+        "merged": "C:\\Users\\dmrzl\\.gradle\\daemon\\8.0\\com.example.examendesarrollo.app-mergeReleaseResources-49:\\layout\\item_movie.xml",
+        "source": "C:\\Users\\dmrzl\\.gradle\\daemon\\8.0\\com.example.examendesarrollo.app-main-51:\\layout\\item_movie.xml"
     }
 ]

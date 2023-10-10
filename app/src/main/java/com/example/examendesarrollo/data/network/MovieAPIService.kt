@@ -7,7 +7,7 @@ import retrofit2.http.GET
 
 
 interface MovieAPIService {
-@GET("movie/popular")
+@GET("3/movie/popular?api_key=ab0aee693d092ef536740ba6771909ec")
 suspend fun getMovieList(): Response<movie>
 
 }

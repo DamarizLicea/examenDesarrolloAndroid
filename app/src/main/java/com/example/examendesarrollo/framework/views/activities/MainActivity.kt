@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
                 recicleView.adapter = adapter
             } else {
                 Log.i("Salida", "No hay datos")
-                binding.root.removeView(recicleView)
 
             }
         }
