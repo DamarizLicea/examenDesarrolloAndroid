@@ -1,30 +1,22 @@
 package com.example.examendesarrollo.data.network
 
-import com.example.examendesarrollo.data.network.model.movie.Result
+import com.example.examendesarrollo.data.network.model.movie.movie
 
 class MovieAPIClient {
     private lateinit var apiMovie: MovieAPIService
-   suspend fun getMovieList(limit:Int): com.example.examendesarrollo.data.network.model.movie.movie? {
-       apiMovie = NetworkModule()
-       return try {
-           apiMovie.getMovieList(limit)
-       } catch (e: java.lang.Exception) {
-           e.printStackTrace()
-           null
-       }
+    suspend fun getPMovieList(): movie? {
+        apiMovie = NetworkModule(MovieAPIService::class.java)
+        return try {
+            val response = apiMovie.getMovieList()
+            when (response.isSuccessful) {
+                true -> response.body()
+                false -> null
+            }
+        } catch (e: java.lang.Exception) {
+            e.printStackTrace()
+            null
+        }
+    }
    }
 
-       suspend fun getMovieInfo(numberMovie: Int): Result? {
-           apiMovie = NetworkModule()
-           return try {
-               apiMovie.getMovieInfo(numberMovie)
-           } catch (e: java.lang.Exception) {
-               e.printStackTrace()
-               null
-           }
 
-
-       }
-
-
-}

@@ -21,7 +21,7 @@ class MovieViewHolder(private val binding: ItemMovieBinding) : RecyclerView.View
                 .fitCenter().priority(Priority.HIGH)
 
         Glide.with(context).load(Constants.IMAGE_SERVER_URL + movieDetails.poster_path)
-            .apply(requestOptions).into(binding.ImageViewMovie)
+            .apply(requestOptions).into(binding.IVMovie)
 
     }
 }

@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.examendesarrollo.data.network.model.movie.Result
+import com.example.examendesarrollo.databinding.ItemMovieBinding
 import com.example.examendesarrollo.framework.adapters.viewholders.MovieViewHolder
 
 class MovieAdapter : RecyclerView.Adapter<MovieViewHolder>() {
-    private var data: ArrayList<com.example.examendesarrollo.data.network.model.movie.Result > = ArrayList()
+    var data: List<Result> = ArrayList()
     lateinit var context: Context
 
-    fun initCustomAdapter(data: ArrayList<Result>, context: Context) {
+    fun initCustomAdapter(data: List<Result>, context: Context) {
         this.data = data
         this.context = context
     }
