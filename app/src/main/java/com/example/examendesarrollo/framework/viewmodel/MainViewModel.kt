@@ -9,6 +9,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * Esta clase usa corutinas para obtener la lista de películas populares
+ */
+
 
 class MainViewModel() : ViewModel() {
     val movieListLiveData = MutableLiveData<List<Result>?>()

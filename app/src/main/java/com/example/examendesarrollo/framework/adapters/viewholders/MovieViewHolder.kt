@@ -10,6 +10,12 @@ import com.example.examendesarrollo.data.network.model.movie.Result
 import com.example.examendesarrollo.databinding.ItemMovieBinding
 import com.example.examendesarrollo.utils.Constants
 
+/**
+ * Esta clase se utiliza para almacenar los datos de
+ * resumen de la empresa y crear la vista de la
+ * tarjeta del catálogo de la empresa
+ */
+
 class MovieViewHolder(private val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(movieDetails: Result, context: Context) {

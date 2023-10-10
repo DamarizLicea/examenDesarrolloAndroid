@@ -12,6 +12,10 @@ import com.example.examendesarrollo.framework.adapters.MovieAdapter
 import com.example.kotlin.pokedexapp.framework.viewmodel.MainViewModel
 
 
+/**
+ * Esta clase representa la actividad principal de la aplicación
+ */
+
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit private var viewModel: MainViewModel

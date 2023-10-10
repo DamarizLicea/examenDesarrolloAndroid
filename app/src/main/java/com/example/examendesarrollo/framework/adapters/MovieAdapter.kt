@@ -8,6 +8,11 @@ import com.example.examendesarrollo.data.network.model.movie.Result
 import com.example.examendesarrollo.databinding.ItemMovieBinding
 import com.example.examendesarrollo.framework.adapters.viewholders.MovieViewHolder
 
+/**
+ * Esta clase usa un inflador de diseño para crear una vista de
+ * tarjeta para cada elemento de datos en la colección de datos.
+ */
+
 class MovieAdapter : RecyclerView.Adapter<MovieViewHolder>() {
     var data: List<Result> = ArrayList()
     lateinit var context: Context
