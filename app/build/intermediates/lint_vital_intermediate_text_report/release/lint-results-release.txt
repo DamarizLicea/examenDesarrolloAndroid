@@ -1,15 +1,1 @@
-C:\Users\dmrzl\examenDesarrolloAndroid\app\src\main\AndroidManifest.xml:16: Error: This class should provide a default constructor (a public constructor with no arguments) (com.example.examendesarrollo.data.network.MovieAPIService) [Instantiatable]
-            android:name=".data.network.MovieAPIService"
-                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\dmrzl\examenDesarrolloAndroid\app\src\main\AndroidManifest.xml:16: Error: MovieAPIService must extend android.app.Service [Instantiatable]
-            android:name=".data.network.MovieAPIService"
-                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-   Explanation for issues of type "Instantiatable":
-   Activities, services, broadcast receivers etc. registered in the manifest
-   file (or for custom views, in a layout file) must be "instantiatable" by
-   the system, which means that the class must be public, it must have an
-   empty public constructor, and if it's an inner class, it must be a static
-   inner class.
-
-2 errors, 0 warnings
+No issues found.

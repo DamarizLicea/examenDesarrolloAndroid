@@ -2,6 +2,11 @@ package com.example.examendesarrollo.data.network
 
 import com.example.examendesarrollo.data.network.model.movie.movie
 
+
+/**
+ * Class that defines the API calls for the IMDB API
+ */
+
 class MovieAPIClient {
     private lateinit var apiMovie: MovieAPIService
     suspend fun getPMovieList(): movie? {
