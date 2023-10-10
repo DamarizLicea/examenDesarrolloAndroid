@@ -1,10 +1,7 @@
-package com.example.kotlin.pokedexapp.utils
+package com.example.examendesarrollo.utils
 
 object Constants {
-    const val SPLASHSCREEN_DURATION = 3000L
-    const val BASE_URL = "https://pokeapi.co/api/v2/"
-    const val MAX_POKEMON_NUMBER = 1279
-    const val MENU_POKEDEX = "POKEDEX"
-    const val MENU_SEARCH = "SEARCH"
-    const val URL_POKEMON = "URL_POKEMON"
+    const val BASE_URL = "https://api.themoviedb.org/3/movie/popular?api_key=ab0aee693d092ef536740ba6771909ec"
+    const val IMAGE_SERVER_URL = "https://image.tmdb.org/t/p/original"
+
 }

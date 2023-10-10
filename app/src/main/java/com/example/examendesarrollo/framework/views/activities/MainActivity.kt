@@ -1,73 +1,57 @@
 package com.example.kotlin.pokedexapp.framework.views.activities
 
+import android.app.ActionBar
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
+import com.example.examendesarrollo.databinding.FragmentErrorBinding
+import com.example.examendesarrollo.framework.adapters.MovieAdapter
 import com.example.kotlin.pokedexapp.R
-import com.example.kotlin.pokedexapp.utils.Constants
+import com.example.examendesarrollo.utils.Constants
 import com.example.kotlin.pokedexapp.databinding.ActivityMainBinding
 import com.example.kotlin.pokedexapp.framework.viewmodel.MainViewModel
 import com.example.kotlin.pokedexapp.framework.views.fragments.PokedexFragment
 import com.example.kotlin.pokedexapp.framework.views.fragments.SearchFragment
 
 class MainActivity : AppCompatActivity() {
-
-    //Global variables
-    private lateinit var binding: ActivityMainBinding
-    private val viewModel: MainViewModel by viewModels()
-    private lateinit var currentFragment: Fragment
-    private var currentMenuOption: String? = null
+    lateinit var binding: ActivityMainBinding
+    lateinit private var viewModel: MainViewModel
+    lateinit var recicleView: RecyclerView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        initializeBinding()
-        initializeObservers()
-        initializeListeners()
-        exchangeCurrentFragment(PokedexFragment(), Constants.MENU_POKEDEX)
-
-    }
-
-    private fun initializeListeners(){
-        binding.appBarMain.llPokedex.setOnClickListener {
-            selectMenuOption(Constants.MENU_POKEDEX)
-        }
-
-        binding.appBarMain.llSearch.setOnClickListener {
-            selectMenuOption(Constants.MENU_SEARCH)
-        }
-    }
-
-    private fun initializeBinding() {
+        viewModel =
+            ViewModelProvider(this)[MainViewModel::class.java]
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-    }
+        viewModel.fetchAllPopularMovies()
 
-    private fun initializeObservers() {
+        // Bindings
+        recicleView = binding.RVPopularList
 
-    }
 
-    private fun exchangeCurrentFragment(newFragment: Fragment, newMenuOption:String){
-        currentFragment = newFragment
+        // Observers
+        viewModel.movieListLiveData.observe(this) { list ->
+            if (!list.isNullOrEmpty()) {
+                binding.root.removeView(binding.skeleton.root)
+                val adapter = MovieAdapter()
+                adapter.initCustomAdapter(list, this)
+                recicleView.adapter = adapter
+            } else {
+                Log.i("Salida", "No hay datos")
+                binding.root.removeView(recicleView)
+                binding.root.removeView(binding.skeleton.root)
+                val errorView = FragmentErrorBinding.inflate(layoutInflater).root
+                binding.LLContainer.addView(errorView)
+                errorView.layoutParams.height = ActionBar.LayoutParams.MATCH_PARENT
+                errorView.layoutParams.width = ActionBar.LayoutParams.MATCH_PARENT
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.nav_host_fragment_content_main,currentFragment)
-            .commit()
-
-        currentMenuOption = newMenuOption
-    }
-
-    private fun selectMenuOption(menuOption:String){
-        if(menuOption == currentMenuOption){
-            return
+            }
         }
-
-        when(menuOption){
-            Constants.MENU_POKEDEX -> exchangeCurrentFragment(PokedexFragment(),Constants.MENU_POKEDEX)
-            Constants.MENU_SEARCH -> exchangeCurrentFragment(SearchFragment(),Constants.MENU_SEARCH)
-        }
     }
-
 }
