@@ -9,7 +9,7 @@ object NetworkModule {
     private val gsonFactory: GsonConverterFactory = GsonConverterFactory.create()
     private val okHttpClient: OkHttpClient = OkHttpClient()
 
-        operator fun invoke(): MovieAPIService {
+        operator fun invoke(java: Class<MovieAPIService>): MovieAPIService {
             return Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
                 .client(okHttpClient)

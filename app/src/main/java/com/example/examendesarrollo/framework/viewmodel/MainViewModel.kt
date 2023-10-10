@@ -11,13 +11,13 @@ import kotlinx.coroutines.launch
 
 
 class MainViewModel() : ViewModel() {
-    val movieListLiveData = MutableLiveData<ArrayList<Result>?>()
+    val movieListLiveData = MutableLiveData<List<Result>?>()
     private val popularListRequirement = MovieListRequirement()
 
     fun fetchAllPopularMovies() {
         viewModelScope.launch(Dispatchers.IO) {
 
-            val data = popularListRequirement()
+            val data = popularListRequirement.invoke()
             CoroutineScope(Dispatchers.Main).launch {
                 movieListLiveData.postValue(data)
             }
@@ -26,3 +26,4 @@ class MainViewModel() : ViewModel() {
 
 
 }
+

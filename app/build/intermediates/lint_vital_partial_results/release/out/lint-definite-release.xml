@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.1.1" type="incidents">
+
+    <incident
+        id="Instantiatable"
+        severity="fatal"
+        message="This class should provide a default constructor (a public constructor with no arguments) (`com.example.examendesarrollo.data.network.MovieAPIService`)">
+        <location
+            file="${:app*release*sourceProvider*0*manifest*0}"
+            line="16"
+            column="27"
+            startOffset="647"
+            endLine="16"
+            endColumn="56"
+            endOffset="676"/>
+    </incident>
+
+    <incident
+        id="Instantiatable"
+        severity="fatal"
+        message="`MovieAPIService` must extend android.app.Service">
+        <location
+            file="${:app*release*sourceProvider*0*manifest*0}"
+            line="16"
+            column="27"
+            startOffset="647"
+            endLine="16"
+            endColumn="56"
+            endOffset="676"/>
+    </incident>
+
+</incidents>
